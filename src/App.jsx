@@ -26,6 +26,10 @@ function App() {
     
   return (
     <>
+      <div>
+        <h1>Hello, user!</h1>
+        <h2>Once you click on the result button, the App give you a gift!</h2>
+      </div>
       <Calculator />
     </>
   );
