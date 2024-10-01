@@ -39,7 +39,7 @@ const initialState = {
     error: null,
 }
 
-function CatImageReducer() {
+function CatImageReducer({ reload }) {
     const [state, dispatch] = useReducer(catImageReducer, initialState)
     const { catImage, loading, error } = state
 
@@ -63,12 +63,16 @@ function CatImageReducer() {
 
         getCatImage()
 
-    }, [])
+    }, [reload])
 
     return (
         <div>
-            {loading && (<p>Loading...</p>)}
-            {loading && <a href="https://dribbble.com/shots/3718681-Loading-GIF/attachments/9981630?mode=media"></a>}
+            {loading && (
+                <>
+                    <p>Loading...</p>
+                    <a href="https://dribbble.com/shots/3718681-Loading-GIF/attachments/9981630?mode=media"></a>
+                </>
+            )}
             {error && (<p>Error: {error}</p>)}
             {catImage && (<img src={catImage.url} width="300" height="300" alt="A random cat" />)}
         </div>

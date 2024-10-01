@@ -37,7 +37,7 @@ function calculatorRedurcer(state, action) {
 }
 
 
-function Calculator() {
+function Calculator({ onEqualClick }) {
     
     const [state, dispatch] = useReducer(calculatorRedurcer, { display: 0, current: 0, operator: null })
     
@@ -55,6 +55,7 @@ function Calculator() {
     
     function calculateResult() {
         dispatch({ type: 'calculate' })
+        onEqualClick()
     }
 
     function handleOperator(operator) {
@@ -64,7 +65,7 @@ function Calculator() {
 
     useEffect(() => {
         console.log("The result is:", state.display);
-    }, [state.display]);
+    }, [state.display])
 
   return (
     <div>
