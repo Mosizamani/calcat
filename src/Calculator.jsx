@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect } from "react";
+import './Calculator.css'
 
 
 function calculatorRedurcer(state, action) {
@@ -36,7 +37,6 @@ function calculatorRedurcer(state, action) {
 
 }
 
-
 function Calculator({ onEqualClick }) {
     
     const [state, dispatch] = useReducer(calculatorRedurcer, { display: 0, current: 0, operator: null })
@@ -67,38 +67,38 @@ function Calculator({ onEqualClick }) {
         console.log("The result is:", state.display);
     }, [state.display])
 
-  return (
-    <div>
-      <p>Calculator</p>
-      <div style={{ marginBottom: "10px", fontSize: "24px", border: "1px solid black", padding: "10px" }}>
-        {state.current !==0 ? state.current : state.display}
+    return (
+      <div className="calculator-container">
+          <p className="calculator-name">Calculator</p>
+          <div className="calculator-display">
+              {state.current !== 0 ? state.current : state.display}
+          </div>
+          <div className="calculator-row">
+              <button className="calculator-button" onClick={() => handleClick("1")}>1</button>
+              <button className="calculator-button" onClick={() => handleClick("2")}>2</button>
+              <button className="calculator-button" onClick={() => handleClick("3")}>3</button>
+              <button className="calculator-button" onClick={() => handleOperator('add')}>+</button>
+          </div>
+          <div className="calculator-row">
+              <button className="calculator-button" onClick={() => handleClick("4")}>4</button>
+              <button className="calculator-button" onClick={() => handleClick("5")}>5</button>
+              <button className="calculator-button" onClick={() => handleClick("6")}>6</button>
+              <button className="calculator-button" onClick={() => handleOperator('subtract')}>-</button>
+          </div>
+          <div className="calculator-row">
+              <button className="calculator-button" onClick={() => handleClick("7")}>7</button>
+              <button className="calculator-button" onClick={() => handleClick("8")}>8</button>
+              <button className="calculator-button" onClick={() => handleClick("9")}>9</button>
+              <button className="calculator-button" onClick={() => handleOperator('multiply')}>*</button>
+          </div>
+          <div className="calculator-row">
+              <button className="calculator-button reset" onClick={handleReset}>C</button>
+              <button className="calculator-button" onClick={() => handleClick("0")}>0</button>
+              <button className="calculator-button equal" onClick={calculateResult}>=</button>
+              <button className="calculator-button" onClick={() => handleOperator('divide')}>/</button>
+          </div>
       </div>
-      <div>
-        <button onClick={() => handleClick("1")}>1</button>
-        <button onClick={() => handleClick("2")}>2</button>
-        <button onClick={() => handleClick("3")}>3</button>
-        <button onClick={() => handleOperator('add')}>+</button>
-      </div>
-      <div>
-        <button onClick={() => handleClick("4")}>4</button>
-        <button onClick={() => handleClick("5")}>5</button>
-        <button onClick={() => handleClick("6")}>6</button>
-        <button onClick={() => handleOperator('subtract')}>-</button>
-      </div>
-      <div>
-        <button onClick={() => handleClick("7")}>7</button>
-        <button onClick={() => handleClick("8")}>8</button>
-        <button onClick={() => handleClick("9")}>9</button>
-        <button onClick={() => handleOperator('multiply')}>*</button>
-      </div>
-      <div>
-        <button onClick={handleReset}>C</button>
-        <button onClick={() => handleClick("0")}>0</button>
-        <button onClick={calculateResult}>=</button>
-        <button onClick={() => handleOperator('divide')}>/</button>
-      </div>
-    </div>
-  )
+  );
 }
 
 export default Calculator;

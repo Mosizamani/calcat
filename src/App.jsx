@@ -16,11 +16,18 @@ function App() {
     <>
       <div>
         <h1>Hello, user!</h1>
-        <h2>Once you click on the result button, the App give you a gift!</h2>
+        <h2>Once you click on the result button, the App gives you a gift!</h2>
       </div>
-      {/* <CatImage /> */}
-      <CatImageReducer reload={reloadCatImage} />
-      <Calculator onEqualClick={onEqualClick } />
+      
+      {/* Container for both the calculator and cat image */}
+      <div className="left-container">
+        <div className="calculator">
+        <div className="cat-image">
+          <CatImageReducer reload={reloadCatImage} />
+        </div>
+          <Calculator onEqualClick={onEqualClick} />
+        </div>
+      </div>
     </>
   );
 }

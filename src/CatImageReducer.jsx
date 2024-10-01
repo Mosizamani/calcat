@@ -66,7 +66,7 @@ function CatImageReducer({ reload }) {
     }, [reload])
 
     return (
-        <div>
+        <div Style={{ border: '2px solid white' }}>
             {loading && (
                 <>
                     <p>Loading...</p>

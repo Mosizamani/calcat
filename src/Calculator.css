@@ -1,0 +1,83 @@
+/* General styling for the calculator container */
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000000;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    width: 200px;
+    margin: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    color: white
+  }
+  .calculator-name {
+    color:white
+  }
+  .calculator-name:hover {
+    color:greenyellow
+  }
+  
+  /* Styling for the display */
+  .calculator-display {
+    font-size: 32px;
+    background-color: #696969;
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+    border: 1px solid #e7e5e5;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 5px rgba(146, 146, 146, 0.1);
+  }
+
+  .calculator-display:hover {
+    color: black
+  }
+  
+  /* Styling for the buttons */
+  .calculator-button {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3d3d3d;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Button hover effect */
+  .calculator-button:hover {
+    background-color: #141414;
+    color: rgb(0, 255, 200)
+  }
+  
+  /* Row of buttons */
+  .calculator-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Special style for the reset and equal buttons */
+  .calculator-button.reset {
+    background-color: #dc3545;
+  }
+  
+  .calculator-button.reset:hover {
+    background-color: #ac1625;
+    color: black
+  }
+
+  .calculator-button.equal {
+    background-color: #28a745;
+  }
+  
+  .calculator-button.equal:hover {
+    background-color: #186328;
+    color: black
+  }
+  
