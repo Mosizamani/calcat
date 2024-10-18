@@ -22,14 +22,14 @@ function App() {
         </div>
         
         <div className="left-container">
-          <div className="calculator">
-          
           <div className="cat-image">
             <CatImageReducer reload={reloadCatImage} />
+          </div>
+          <div className="calculator">
             <Calculator onEqualClick={onEqualClick} />
           </div>
-          </div>
         </div>
+
       </div>
     </>
   );
